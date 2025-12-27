@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 
 @Entity('users')
 export class User {
@@ -12,7 +12,7 @@ export class User {
   password: string;
 
   @Column({ nullable: true })
-  name: string;
+  fullName: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
